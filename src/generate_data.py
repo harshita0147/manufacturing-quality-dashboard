@@ -22,3 +22,7 @@ X_clean = X.drop(columns=cols_to_drop)
 
 print(f"dropped {len(cols_to_drop)} columns with more than 50% missing data")
 print(X_clean.shape)
+
+X_filled = X_clean.fillna(X_clean.mean())
+print(X_filled.isna().sum().sum())
+
